@@ -1,18 +1,16 @@
 package com.example.exceptions.model;
 
-import com.example.exceptions.Valdiation.ValidName;
 import org.springframework.data.annotation.Id;
 
 public class Photo {
     @Id
     private String id;
-    private int albumId;
+    private  String albumId;
     private String photoUrl;
     private String createdBy;
-    @ValidName
     private String dateCreated;
 
-    public Photo(String id, int albumId, String photoUrl, String createdBy, String dateCreated) {
+    public Photo(String id, String albumId, String photoUrl, String createdBy, String dateCreated) {
         this.id = id;
         this.albumId = albumId;
         this.photoUrl = photoUrl;
@@ -28,11 +26,11 @@ public class Photo {
         this.id = id;
     }
 
-    public int getAlbumId() {
+    public String getAlbumId() {
         return albumId;
     }
 
-    public void setAlbumId(int albumId) {
+    public void setAlbumId(String albumId) {
         this.albumId = albumId;
     }
 

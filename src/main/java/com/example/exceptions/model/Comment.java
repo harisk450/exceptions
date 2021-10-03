@@ -1,21 +1,16 @@
 package com.example.exceptions.model;
 
-import com.example.exceptions.Valdiation.ValidName;
 import org.springframework.data.annotation.Id;
-
-import javax.validation.constraints.Min;
 
 public class Comment {
     @Id
     private String id;
-    private int photoId;
-    @Min(value = 5)
+    private String photoId;
     private String message;
-    @ValidName
     private String createdBy;
     private String dateCreated;
 
-    public Comment(String id, int photoId, String message, String createdBy, String dateCreated) {
+    public Comment(String id, String photoId, String message, String createdBy, String dateCreated) {
         this.id = id;
         this.photoId = photoId;
         this.message = message;
@@ -31,11 +26,11 @@ public class Comment {
         this.id = id;
     }
 
-    public int getPhotoId() {
+    public String getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(int photoId) {
+    public void setPhotoId(String photoId) {
         this.photoId = photoId;
     }
 

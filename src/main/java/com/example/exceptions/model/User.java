@@ -2,18 +2,12 @@ package com.example.exceptions.model;
 
 import org.springframework.data.annotation.Id;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-
-
 public class User {
     @Id
     private String id;
     private String name;
-    @Email
     private String email;
-    @NotEmpty
-    private String profilePhotoUrl;
+    private  String profilePhotoUrl;
 
     public User(String id, String name, String email, String profilePhotoUrl) {
         this.id = id;
@@ -36,7 +30,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-
     }
 
     public String getEmail() {

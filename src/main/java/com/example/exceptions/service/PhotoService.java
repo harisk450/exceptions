@@ -1,8 +1,8 @@
-package com.example.exceptions.Service;
+package com.example.exceptions.service;
 
 
-import com.example.exceptions.Repository.PhotoRepository;
 import com.example.exceptions.model.Photo;
+import com.example.exceptions.repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,24 +17,20 @@ public class PhotoService {
         return photoRepository.save(photo);
     }
 
+
     public List<Photo> getAllPhotos() {
         return photoRepository.findAll();
+    }
+
+    public List<Photo> getPhotoByCreator(String createdBy) {
+        return photoRepository.findAllByCreatedBy(createdBy);
     }
 
     public Photo updatePhoto(Photo photo) {
         return photoRepository.save(photo);
     }
 
-
     public void deletePhoto(String id) {
         photoRepository.deleteById(id);
-    }
-
-    public List<Photo> getPhotoByCreator(String createdBy) {
-        return photoRepository.findByCreator(createdBy);
-    }
-
-    public Photo getPhotoById(String id) {
-        return photoRepository.findById(id).get();
     }
 }
